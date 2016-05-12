@@ -1,0 +1,58 @@
+.nav {
+    background-color: $primary;
+    height: 5em;
+    position: relative;
+    h1 {
+        font-weight: bold;
+        font-size: 3em;
+        color: $secondary;
+        @include linear;
+        margin: 0;
+        margin-left: .5em;
+        @include v-center(absolute);
+    }
+    .button1 {
+        background-color: $secondary;
+        @include v-center;
+        @include linear(right);
+        margin-right: 1.5em;
+        padding: .5em 1em;
+    }
+    .button2 {
+        @extend .button1
+    }
+    .button3 {
+        @extend .button1
+    }
+}
+
+.container {
+    position: relative;
+    @include h-center;
+    width: 80%;
+    max-width: 1200px;
+    .logo {
+        position: relative;
+        width: 100%;
+        height: auto;
+        img {
+            height: 15em;
+            width: auto;
+            @include h-center;
+        }
+    }
+    .about {
+        width: 60%;
+        @include h-center;
+        border-bottom: 1px solid $gray-accent;
+        margin-bottom: 2em;
+        margin-top: -1.5em;
+        p {
+            color: $primary;
+            font-size: 1.25em;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 1.5em;
+        }
+    }
+}

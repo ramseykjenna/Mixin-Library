@@ -1,0 +1,29 @@
+    .new-page {
+        .logo {
+            position: relative;
+            width: 100%;
+            height: auto;
+            img {
+                height: 15em;
+                width: auto;
+                @include h-center;
+            }
+        }
+        .about {
+            width: 60%;
+            @include h-center;
+            border-bottom: 1px solid $gray-accent;
+            margin-bottom: 2em;
+            margin-top: -1.5em;
+            h1 {
+                color: $primary;
+            }
+            p {
+                color: $primary;
+                font-size: 1.25em;
+                text-align: center;
+                margin: 0;
+                margin-bottom: 1.5em;
+            }
+        }
+    }

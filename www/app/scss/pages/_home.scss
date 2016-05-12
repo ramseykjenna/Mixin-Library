@@ -1,0 +1,94 @@
+.home-page {
+    .logo {
+        position: relative;
+        width: 100%;
+        height: auto;
+        img {
+            height: 15em;
+            width: auto;
+            @include h-center;
+        }
+    }
+    .about {
+        width: 60%;
+        @include h-center;
+        border-bottom: 1px solid $gray-accent;
+        margin-bottom: 2em;
+        margin-top: -1.5em;
+        p {
+            color: $primary;
+            font-size: 1.25em;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 1.5em;
+        }
+    }
+    .latest {
+        height: auto;
+        .latest-header {
+            color: darken($gray-accent, 15%);
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
+    }
+    .popular {
+        height: auto;
+        .popular-header {
+            @extend .latest-header;
+        }
+    }
+    .card {
+        width: 100%;
+        height: 372px;
+        border-radius: 10px;
+        border: 2px solid $secondary;
+        margin-bottom: 2em;
+        overflow: hidden;
+        .codepen {
+            width: 50%;
+            @include linear;
+        }
+        .detail {
+            width: 50%;
+            @include linear;
+            padding: 1em;
+            h1 {
+                font-weight: normal;
+                font-size: 1.5em;
+                margin: 0;
+                color: $primary;
+            }
+            h2 {
+                @extend h1;
+                color: lighten($primary, 25%);
+                font-size: 1em;
+                margin-left: 1em;
+            }
+            h3 {
+                @extend h1;
+                color: lighten($primary, 35%);
+                font-size: .75em;
+                position: absolute;
+                top: 1em;
+                right: 1em;
+            }
+            .description {
+                color: $primary;
+                margin-bottom: 11em;
+            }
+            .heart {
+                height: 4em;
+                width: auto;
+                @include linear;
+            }
+            .comment {
+                @extend .heart;
+                color: $accent1;
+            }
+            .save {
+                @extend .heart;
+                color: $accent2;
+            }
+        }
+    }
+}

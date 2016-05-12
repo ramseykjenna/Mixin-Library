@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+//bourbon and neat
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+//pages
+@import "pages/home";
+@import "pages/mixin-page";
+@import "pages/profile";
+@import "pages/upload";
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+}

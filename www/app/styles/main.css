@@ -1,0 +1,246 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.home-page .logo {
+  position: relative;
+  width: 100%;
+  height: auto; }
+  .home-page .logo img {
+    height: 15em;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+.home-page .about {
+  width: 60%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ECF0F1;
+  margin-bottom: 2em;
+  margin-top: -1.5em; }
+  .home-page .about p {
+    color: #34314c;
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1.5em; }
+.home-page .latest {
+  height: auto; }
+  .home-page .latest .latest-header, .home-page .latest .popular .popular-header, .home-page .popular .latest .popular-header {
+    color: #c0cdd1;
+    margin-top: 1em;
+    margin-bottom: 0; }
+.home-page .popular {
+  height: auto; }
+.home-page .card {
+  width: 100%;
+  height: 372px;
+  border-radius: 10px;
+  border: 2px solid #ffc952;
+  margin-bottom: 2em;
+  overflow: hidden; }
+  .home-page .card .codepen {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    float: left; }
+  .home-page .card .detail {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 1em; }
+    .home-page .card .detail h1, .home-page .card .detail h2, .home-page .card .detail h3 {
+      font-weight: normal;
+      font-size: 1.5em;
+      margin: 0;
+      color: #34314c; }
+    .home-page .card .detail h2 {
+      color: #69639a;
+      font-size: 1em;
+      margin-left: 1em; }
+    .home-page .card .detail h3 {
+      color: #8681ae;
+      font-size: .75em;
+      position: absolute;
+      top: 1em;
+      right: 1em; }
+    .home-page .card .detail .description {
+      color: #34314c;
+      margin-bottom: 11em; }
+    .home-page .card .detail .heart, .home-page .card .detail .comment, .home-page .card .detail .save {
+      height: 4em;
+      width: auto;
+      display: inline-block;
+      position: relative;
+      float: left; }
+    .home-page .card .detail .comment {
+      color: #47b8e0; }
+    .home-page .card .detail .save {
+      color: #ff7473; }
+
+.all-page {
+  padding-top: 2em; }
+  .all-page .card {
+    width: 100%;
+    height: 372px;
+    border-radius: 10px;
+    border: 2px solid #ffc952;
+    margin-bottom: 2em;
+    overflow: hidden; }
+    .all-page .card .codepen {
+      width: 50%;
+      display: inline-block;
+      position: relative;
+      float: left; }
+    .all-page .card .detail {
+      width: 50%;
+      display: inline-block;
+      position: relative;
+      float: left;
+      padding: 1em; }
+      .all-page .card .detail h1, .all-page .card .detail h2, .all-page .card .detail h3 {
+        font-weight: normal;
+        font-size: 1.5em;
+        margin: 0;
+        color: #34314c; }
+      .all-page .card .detail h2 {
+        color: #69639a;
+        font-size: 1em;
+        margin-left: 1em; }
+      .all-page .card .detail h3 {
+        color: #8681ae;
+        font-size: .75em;
+        position: absolute;
+        top: 1em;
+        right: 1em; }
+      .all-page .card .detail .description {
+        color: #34314c;
+        margin-bottom: 11em; }
+      .all-page .card .detail .heart, .all-page .card .detail .comment, .all-page .card .detail .save {
+        height: 4em;
+        width: auto;
+        display: inline-block;
+        position: relative;
+        float: left; }
+      .all-page .card .detail .comment {
+        color: #47b8e0; }
+      .all-page .card .detail .save {
+        color: #ff7473; }
+
+.profile-page .card {
+  width: 100%;
+  height: 372px;
+  border-radius: 10px;
+  border: 2px solid #ffc952;
+  margin-bottom: 2em;
+  overflow: hidden;
+  margin-top: 5em; }
+  .profile-page .card .profile-info .name, .profile-page .card .profile-info h2, .profile-page .card .profile-info p {
+    color: #34314c;
+    margin-left: 1em; }
+  .profile-page .card a {
+    margin-left: 1em; }
+  .profile-page .card img {
+    height: 5em;
+    width: auto;
+    display: inline-block;
+    position: relative;
+    float: left; }
+
+.new-page .logo {
+  position: relative;
+  width: 100%;
+  height: auto; }
+  .new-page .logo img {
+    height: 15em;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+.new-page .about {
+  width: 60%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ECF0F1;
+  margin-bottom: 2em;
+  margin-top: -1.5em; }
+  .new-page .about h1, .new-page .about .home-page .card .detail h2, .home-page .card .detail .new-page .about h2, .new-page .about .home-page .card .detail h3, .home-page .card .detail .new-page .about h3, .new-page .about .all-page .card .detail h2, .all-page .card .detail .new-page .about h2, .new-page .about .all-page .card .detail h3, .all-page .card .detail .new-page .about h3 {
+    color: #34314c; }
+  .new-page .about p {
+    color: #34314c;
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1.5em; }
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0; }
+  body a {
+    text-decoration: none; }
+  body .logo-wrap {
+    opacity: 0 !important; }
+
+.nav {
+  background-color: #34314c;
+  height: 5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999; }
+  .nav .word-mark {
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #ffc952;
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin: 0;
+    margin-left: .5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .nav .button1, .nav .button2, .nav .button3 {
+    background-color: #ffc952;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-right: 1.5em;
+    padding: .5em 1em;
+    width: 7em;
+    text-align: center;
+    border-radius: 3px; }
+
+.container {
+  position: relative;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 1200px;
+  padding-top: 5em; }
+
+.footer {
+  position: relative;
+  height: 5em;
+  width: 100%;
+  text-align: center;
+  position: relative; }
+  .footer i {
+    font-size: 1.25em;
+    color: #ffc952; }
+  .footer span {
+    font-size: 1.25em;
+    color: #8681ae;
+    margin: 0; }
+
+/*# sourceMappingURL=main.css.map */
