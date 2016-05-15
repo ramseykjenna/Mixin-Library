@@ -7,8 +7,9 @@
  * Provides rudimentary account management functions.
  */
 angular.module('mixinaidApp')
-  .controller('AccountCtrl', function ($scope, user, Auth, Ref, $firebaseObject, $timeout) {
+  .controller('AccountCtrl', function ($scope, $rootScope, user, Auth, Ref, $firebaseObject, $timeout) {
     $scope.user = user;
+    $rootScope.user = user;
     $scope.logout = function() { Auth.$unauth(); };
     $scope.messages = [];
     var profile = $firebaseObject(Ref.child('users/'+user.uid));

@@ -1,35 +1,81 @@
+<div class="login-page">
 
-<h2>Login Page</h2>
 
-<fieldset>
-  <legend>Oauth</legend>
-  <p>
-    <button  ng-click="oauthLogin('google')">Google</button>
-    <button  ng-click="oauthLogin('github')">GitHub</button>
-  </p>
-</fieldset>
 
-<form role="form">
-  <p class="form-group">
-    <label for="loginEmail">email</label>
-    <input id="loginEmail" required name="email" type="email" ng-model="email" />
-  </p>
-  <p class="form-group">
-    <label for="loginPass">password</label>
-    <input id="loginPass" required name="pass" type="password" ng-model="pass" />
-  </p>
-  <p class="form-group" ng-cloak ng-show="createMode">
-    <label for="loginConfirm">confirm pass</label>
-    <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm" />
-  </p>
 
-  <p>
-    <button  ng-click="passwordLogin(email, pass)" ng-hide="createMode">Log In</button>
-    <button  ng-click="createMode = true" ng-hide="createMode">Register</button>
-    <button  ng-cloak ng-show="createMode"
-            ng-click="createAccount(email, pass, confirm)">Create Account</button>
-    <button  ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
-  </p>
-</form>
-<p ng-show="err" class="error">{{err}}</p>
 
+
+
+
+    <!-- Email Login Form -->
+    <div class="login-form">
+<!--
+       <div class="rainbow">
+           <div class="colors primary"></div>
+           <div class="colors secondary"></div>
+           <div class="colors accent1"></div>
+           <div class="colors accent2"></div>
+           <div class="colors primary"></div>
+           <div class="colors secondary"></div>
+           <div class="colors accent1"></div>
+           <div class="colors accent2"></div>
+           <div class="colors primary"></div>
+           <div class="colors secondary"></div>
+       </div>
+-->
+        <form role="form">
+            <h2>Login</h2>
+            <!-- Email input -->
+            <p class="form-group">
+
+                <input id="loginEmail" placeholder="Email" required name="email" type="email" ng-model="email" />
+            </p>
+
+            <!-- Password Input -->
+            <p class="form-group">
+
+                <input id="loginPass" placeholder="Password" required name="pass" type="password" ng-model="pass" />
+            </p>
+
+            <!-- Confirm Password -->
+            <p class="form-group" ng-cloak ng-show="createMode">
+
+                <input id="loginConfirm" placeholder="Confirm Password" required name="confirm" type="password" ng-model="confirm" />
+            </p>
+
+            <!-- Button Sets -->
+            <div class="buttons">
+
+                <!-- Email -->
+                <button id="login" ng-click="passwordLogin(email, pass)" ng-hide="createMode">Log In</button>
+
+                <button id="register" ng-click="createMode = true" ng-hide="createMode">Register</button>
+
+                <button id="create" ng-cloak ng-show="createMode" ng-click="createAccount(email, pass, confirm)">Create Account</button>
+
+                <button id="cancel" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <div class="divider-content">
+                        <i class="ion-minus-round"></i>
+                        <span>or</span>
+                        <i class="ion-minus-round"></i>
+                    </div>
+                </div>
+
+
+                <!-- Third Party -->
+                <button id="google" ng-click="oauthLogin('google')">Google</button>
+
+                <button id="git" ng-click="oauthLogin('github')">GitHub</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- Error Message -->
+    <p ng-show="err" class="error">{{err.code}}</p>
+
+</div>

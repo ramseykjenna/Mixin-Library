@@ -1,0 +1,111 @@
+.login-page {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    .login-form {
+        height: auto;
+        width: 50%;
+//        background-color: $gray-accent;
+        @include centerer;
+//        border: 1px solid darken($gray-accent, 10%);
+        float: left;
+        padding: 3em 0;
+        .rainbow {
+            height: .75em;
+            width: 100%;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            .colors {
+                height: 100%;
+                width: 10%;
+                @include linear;
+            }
+            .primary {
+                background-color: $primary;
+            }
+            .secondary {
+                background-color: $secondary;
+            }
+            .accent1 {
+                background-color: $accent1;
+            }
+            .accent2 {
+                background-color: $accent2;
+            }
+        }
+        h2 {
+            color: darken($gray-accent, 20%);
+            text-align: center;
+            margin-top: 0;
+        }
+        label {
+            color: $accent1;
+            font-size: 1.5em;
+        }
+        input {
+            height: 3em;
+            border-style: none;
+            border-radius: 2px;
+            outline: 0;
+            border: 2px solid darken($gray-accent, 10%);
+            @include h-center;
+            width: 50%;
+        }
+        input:placeholder {}
+        .buttons {
+            @include h-center;
+            width: 50%;
+            height: auto;
+            float: left;
+            position: relative;
+            button {
+                @include linear;
+                width: 47.5%;
+                border-radius: 2px;
+                border-style: none;
+                height: 3em;
+                color: white;
+            }
+            #login {
+                margin-right: 5%;
+                background-color: $primary;
+            }
+            #register {
+                background-color: $secondary;
+            }
+            #create {
+                margin-right: 5%;
+                background-color: $secondary;
+            }
+            #cancel {
+                background-color: darken($gray-accent, 15%);
+            }
+            #google {
+                margin-right: 5%;
+                background-color: white;
+                color: $primary;
+                border: 1px solid $primary;
+            }
+            #git {
+                @extend #google;
+                margin-right: 0;
+            }
+        }
+        .divider {
+            width: 100%;
+            height: 6em;
+            position: relative;
+            float: left;
+            .divider-content {
+                width: auto;
+                height: auto;
+                text-align: center;
+                color: darken($gray-accent, 20%);
+                @include centerer;
+                i {}
+                span {}
+            }
+        }
+    }
+}

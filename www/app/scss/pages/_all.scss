@@ -37,20 +37,19 @@
             }
             .description {
                 color: $primary;
-                margin-bottom: 11em;
+                margin-bottom: 12em;
             }
             .heart {
-                height: 4em;
+                height: 1em;
                 width: auto;
                 @include linear;
+                margin: 1em;
             }
             .comment {
                 @extend .heart;
-                color: $accent1;
             }
             .save {
                 @extend .heart;
-                color: $accent2;
             }
         }
     }

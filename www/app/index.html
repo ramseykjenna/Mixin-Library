@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -18,20 +19,69 @@
     <!-- Google Font: Fira Sans -->
     <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300,500,700' rel='stylesheet' type='text/css'>
 
+    <!-- ionicons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  </head>
-  <body ng-app="mixinaidApp">
+</head>
+
+<body ng-app="mixinaidApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-     <div class="nav" ng-cloak="">
-        <a href="#/" class="word-mark">MixinAid</a>
-         <a href="#/new" class="button2">Add New</a>
-         <a href="#/all" class="button3">View All</a>
-         <a ng-show-auth="" href="#/profile" class="button1">Profile</a>
-         <a ng-hide-auth="" href="#/login" class="button1">Log In</a>
+    <div class="navigation" ng-controller="NavCtrl as nav">
+        <div class="nav" ng-cloak="">
+            <div class="rainbow">
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+                <div class="colors accent1"></div>
+                <div class="colors accent2"></div>
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+                <div class="colors accent1"></div>
+                <div class="colors accent2"></div>
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+                <div class="colors accent1"></div>
+                <div class="colors accent2"></div>
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+                <div class="colors accent1"></div>
+                <div class="colors accent2"></div>
+                <div class="colors primary"></div>
+                <div class="colors secondary"></div>
+            </div>
+
+            <!-- Hamburger -->
+            <i class="ion-navicon-round" ng-click="nav.menuOpen = !nav.menuOpen"></i>
+
+            <!-- Word Mark -->
+            <a href="#/" class="word-mark">MixinAid</a>
+
+            <!-- Buttons -->
+            <a ng-show-auth="" href="#/account" class="account">Account</a>
+            <a ng-hide-auth="" href="#/login" class="account">Log In</a>
+            <a href="#/new" class="new">Add New</a>
+            <a href="#/all" class="all">My Mixins</a>
+
+        </div>
+        <div class="mobile-menu" ng-class="{'open':nav.menuOpen}">
+            <div class="logo">
+                <img src="images/MixinAid.svg" alt="">
+            </div>
+            <ul class="mm-items">
+                <li>Home</li>
+                <li>My Mixins</li>
+                <li>Add New</li>
+                <li>Account Settings</li>
+            </ul>
+            <div class="copyright">
+                <img src="images/copyright-icon.svg" alt="">
+            </div>
+        </div>
+
     </div>
 
 
@@ -40,22 +90,24 @@
     </div>
 
     <div class="footer">
-      <i class="ion-ios-heart-outline"></i>
-     <span>Created by Efflorescent</span>
-   </div>
+        <i class="ion-ios-heart-outline"></i>
+        <span>Created by Efflorescent</span>
+    </div>
 
     </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        ! function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -72,22 +124,24 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/angularfire/config.js"></script>
-        <script src="scripts/angularfire/firebase.ref.js"></script>
-        <script src="scripts/controllers/chat.js"></script>
-        <script src="scripts/filters/reverse.js"></script>
-        <script src="scripts/angularfire/auth.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/account.js"></script>
-        <script src="scripts/directives/ngShowAuth.js"></script>
-        <script src="scripts/directives/ngHideAuth.js"></script>
-        <script src="scripts/routes.js"></script>
-        <script src="scripts/controllers/profile.js"></script>
-        <script src="scripts/controllers/all.js"></script>
-        <script src="scripts/controllers/new.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/angularfire/config.js"></script>
+    <script src="scripts/angularfire/firebase.ref.js"></script>
+    <script src="scripts/controllers/chat.js"></script>
+    <script src="scripts/filters/reverse.js"></script>
+    <script src="scripts/angularfire/auth.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/account.js"></script>
+    <script src="scripts/directives/ngShowAuth.js"></script>
+    <script src="scripts/directives/ngHideAuth.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/controllers/all.js"></script>
+    <script src="scripts/controllers/new.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>

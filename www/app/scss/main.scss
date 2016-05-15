@@ -21,44 +21,129 @@ body {
     }
 }
 
-.nav {
-    background-color: $primary;
-    height: 5em;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    .word-mark {
-        font-weight: bold;
-        font-size: 2.5em;
-        color: $secondary;
-        @include linear;
-        margin: 0;
-        margin-left: .5em;
-        @include v-center(absolute);
+.navigation {
+    .nav {
+        height: 4em;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: white;
+        box-shadow: 0 0 30px 0 $gray-accent;
+        .rainbow {
+            height: .25em;
+            width: 100%;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            .colors {
+                height: 100%;
+                width: 5%;
+                @include linear;
+            }
+            .primary {
+                background-color: $primary;
+            }
+            .secondary {
+                background-color: $secondary;
+            }
+            .accent1 {
+                background-color: $accent1;
+            }
+            .accent2 {
+                background-color: $accent2;
+            }
+        }
+        i {
+            font-size: 1.25em;
+            color: $primary;
+            @include linear;
+            @include v-center(absolute);
+            left: .75em;
+        }
+        .word-mark {
+            font-weight: bold;
+            font-size: 2em;
+            color: $primary;
+            @include linear;
+            margin: 0;
+            left: 1.75em;
+            @include v-center(absolute);
+        }
+        .account {
+            color: $accent2;
+            @include v-center;
+            @include linear(right);
+            background-color:  transparent;
+            margin-right: 1em;
+            padding: .5em 1em;
+            width: 7em;
+            text-align: center;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        .new {
+            @extend .account;
+            color: $primary;
+        }
+        .all {
+            @extend .account;
+            color: $accent1;
+        }
     }
-    .button1 {
-        background-color: $secondary;
-        @include v-center;
-        @include linear(right);
-        margin-right: 1.5em;
-        padding: .5em 1em;
-        width: 7em;
-        text-align: center;
-        border-radius: 3px;
+    .mobile-menu {
+        height: 100%;
+        width: 20em;
+        position: fixed;
+        top: 4em;
+        left: -20em;
+        z-index: 998;
+        background-color: white;
+        box-shadow: 1px 0 5px darken($gray-accent, 15%);
+        transition: left 500ms ease-in-out;
+        .logo {
+            position: relative;
+            height: 6em;
+            width: 100%;
+            img {
+                @include centerer;
+                height: 5em;
+                width: auto;
+                margin-bottom: 1em;
+            }
+        }
+        ul {
+            padding: 0;
+            li {
+                list-style-type: none;
+                border-bottom: 1px solid $gray-accent;
+                color: $primary;
+                margin-left: 1em;
+                margin-bottom: 1em;
+                margin-right: 1em;
+                font-size: 1.5em;
+            }
+        }
+        .copyright {
+            position: relative;
+            img {
+                @include h-center;
+                height: 3em;
+                width: auto;
+            }
+        }
     }
-    .button2 {
-        @extend .button1
-    }
-    .button3 {
-        @extend .button1
+    .open {
+        @extend .mobile-menu;
+        left: 0 !important;
     }
 }
 
 .container {
     position: relative;
     @include h-center;
-    width: 80%;
+    width: 85%;
     max-width: 1200px;
     padding-top: 5em;
 }
@@ -69,6 +154,7 @@ body {
     width: 100%;
     text-align: center;
     position: relative;
+    float: left;
     i {
         font-size: 1.25em;
         color: $secondary;
