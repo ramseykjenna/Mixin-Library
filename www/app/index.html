@@ -62,9 +62,12 @@
 
             <!-- Buttons -->
             <a ng-show-auth="" href="#/account" class="account">Account</a>
+
             <a ng-hide-auth="" href="#/login" class="account">Log In</a>
+
             <a href="#/new" class="new">Add New</a>
-            <a href="#/all" class="all">My Mixins</a>
+
+            <a href="#/all" class="all" ng-show-auth="">My Mixins</a>
 
         </div>
         <div class="mobile-menu" ng-class="{'open':nav.menuOpen}">

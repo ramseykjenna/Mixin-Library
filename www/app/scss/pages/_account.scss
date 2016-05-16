@@ -1,0 +1,58 @@
+    .account-page {
+        height: auto;
+        width: 70%;
+        padding-top: 5em;
+        @include h-center;
+        #logout {
+            background-color: transparent;
+            font-size: 1.5em;
+            width: 100%;
+            margin: 3em 0;
+            color:darken($gray-accent, 20%);
+            text-align: center;
+        }
+        #logout:hover {
+            color: $accent2;
+        }
+        .email {
+            @include linear;
+            width: 45%;
+            margin: 2.5%;
+//            text-align: center;
+        }
+        .pass {
+            @extend .email;
+        }
+//        .email {
+//            @extend .profile;
+//        }
+        h3 {
+            color: darken($gray-accent, 20%);
+            text-align: center;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        label {
+        display: block;
+            color: $primary;
+            margin-bottom: .5em;
+        }
+        input {
+            height: 3em;
+            width: 100%;
+            border-style: none;
+            border-radius: 2px;
+            outline: 0;
+            border: 2px solid darken($gray-accent, 10%);
+
+        }
+        button {
+            width: 100%;
+            border-radius: 2px;
+            border-style: none;
+            height: 3em;
+            background-color: $accent1;
+            color: white;
+            font-size: .75em;
+        }
+    }

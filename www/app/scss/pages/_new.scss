@@ -1,29 +1,75 @@
     .new-page {
-        .logo {
-            position: relative;
-            width: 100%;
-            height: auto;
-            img {
-                height: 15em;
-                width: auto;
-                @include h-center;
-            }
-        }
         .about {
             width: 60%;
             @include h-center;
-            border-bottom: 1px solid $gray-accent;
             margin-bottom: 2em;
-            margin-top: -1.5em;
+            margin-top: 5em;
             h1 {
                 color: $primary;
+                white-space: nowrap;
             }
             p {
-                color: $primary;
+                color: $accent2;
                 font-size: 1.25em;
                 text-align: center;
-                margin: 0;
-                margin-bottom: 1.5em;
+            }
+            ul {
+                list-style-type: none;
+                li {
+                    color: $primary;
+                    span {
+                        font-size: 2em;
+                        color: $accent1;
+                        margin-right: .5em;
+                    }
+                    img {
+                        height: 10em;
+                        width: auto;
+                        @include linear;
+                        margin: .5em .5em .5em 3em;
+                        border-radius: 2px;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $accent1;
+                        font-size: 1.5em;
+                    }
+                    a:hover {
+                        color: $accent2;
+                    }
+                    .codepen-text {
+                        display: block;
+                        margin-left: 4em;
+                        height: 10em;
+                        width: 70%;
+                        border: 2px solid $gray-accent;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+        .upload {
+            width: 100%;
+            height: auto;
+            .codepen-text {
+                height: 10em;
+                border-style: none;
+                border-radius: 2px;
+                outline: 0;
+                border: 2px solid $gray-accent;
+                width: 50%;
+                font-size: 1em;
+                color: $primary;
+                margin: .5em;
+            }
+            button {
+                width: 20%;
+                border-radius: 2px;
+                border-style: none;
+                height: 3em;
+                color: white;
+                background-color: $accent2;
+                @include h-center;
             }
         }
     }

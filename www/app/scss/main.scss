@@ -1,167 +1,297 @@
-@import "mixins";
-@import "variables";
-//bourbon and neat
-@import "bourbon/bourbon";
-@import "neat/neat";
-//pages
-@import "pages/home";
-@import "pages/all";
-@import "pages/profile";
-@import "pages/new";
-@import "pages/account";
-@import "pages/login";
-body {
-    font-family: 'Fira Sans', sans-serif;
-    margin: 0;
-    a {
-        text-decoration: none;
+    @import "mixins";
+    @import "variables";
+    //bourbon and neat
+    @import "bourbon/bourbon";
+    @import "neat/neat";
+    //pages
+    @import "pages/home";
+    @import "pages/all";
+    @import "pages/profile";
+    @import "pages/new";
+    @import "pages/account";
+    @import "pages/login";
+    body {
+        font-family: 'Fira Sans', sans-serif;
+        margin: 0;
+        a {
+            text-decoration: none;
+        }
+        .logo-wrap {
+            opacity: 0 !important;
+        }
     }
-    .logo-wrap {
-        opacity: 0 !important;
-    }
-}
 
-.navigation {
-    .nav {
-        height: 4em;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 999;
-        background-color: white;
+    .card {
+        @include linear;
+        width: 47%;
+        margin: 1.5%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 2em;
+        overflow: hidden;
+        padding-bottom: 1em;
         box-shadow: 0 0 30px 0 $gray-accent;
-        .rainbow {
-            height: .25em;
+        .detail {
             width: 100%;
-            background-color: red;
-            position: absolute;
-            bottom: 0;
-            .colors {
-                height: 100%;
-                width: 5%;
+            padding: 1em;
+            position: relative;
+            .title {
+                font-size: 1.5em;
+                color: $primary;
+                width: 30%;
+                @include v-center;
+            }
+            .user {
+                color: darken($gray-accent, 10%);
+                font-size: .9em;
+                margin: 0;
+                //                    margin-left: 2em;
+            }
+            .icons {
+                width: 30%;
                 @include linear;
+                float: right;
+                text-align: right;
+                .ion-ios-plus-outline {
+                    font-size: 1.5em;
+                    color: $accent1;
+                    margin-right: .5em;
+                }
+                .ion-clipboard {
+                    font-size: 1.5em;
+                    color: $secondary;
+                }
             }
-            .primary {
-                background-color: $primary;
+        }
+        .codepen {
+            width: 100%;
+        }
+        .comments {
+            width: 100%;
+            padding: 1em;
+            padding-bottom: 0;
+            input {
+                height: 2em;
+                border-style: none;
+                border-radius: 2px;
+                outline: 0;
+                border: 2px solid $gray-accent;
+                @include linear;
+                width: 76%;
+                padding-left: .25em;
+                margin-right: 4%;
+                font-size: 1em;
+                color: $primary;
             }
-            .secondary {
-                background-color: $secondary;
-            }
-            .accent1 {
-                background-color: $accent1;
-            }
-            .accent2 {
+            button {
+                width: 20%;
+                border-radius: 2px;
+                border-style: none;
+                height: 3em;
+                color: white;
                 background-color: $accent2;
             }
         }
-        i {
-            font-size: 1.25em;
-            color: $primary;
-            @include linear;
-            @include v-center(absolute);
-            left: .75em;
-        }
-        .word-mark {
-            font-weight: bold;
-            font-size: 2em;
-            color: $primary;
-            @include linear;
-            margin: 0;
-            left: 1.75em;
-            @include v-center(absolute);
-        }
-        .account {
-            color: $accent2;
-            @include v-center;
-            @include linear(right);
-            background-color:  transparent;
-            margin-right: 1em;
-            padding: .5em 1em;
-            width: 7em;
-            text-align: center;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-size: 1.1em;
-        }
-        .new {
-            @extend .account;
-            color: $primary;
-        }
-        .all {
-            @extend .account;
-            color: $accent1;
-        }
     }
-    .mobile-menu {
-        height: 100%;
-        width: 20em;
-        position: fixed;
-        top: 4em;
-        left: -20em;
-        z-index: 998;
-        background-color: white;
-        box-shadow: 1px 0 5px darken($gray-accent, 15%);
-        transition: left 500ms ease-in-out;
-        .logo {
-            position: relative;
-            height: 6em;
+
+    .navigation {
+        .nav {
+            height: 4em;
+            position: fixed;
+            top: 0;
             width: 100%;
-            img {
-                @include centerer;
-                height: 5em;
-                width: auto;
-                margin-bottom: 1em;
+            z-index: 999;
+            background-color: white;
+            box-shadow: 0 0 30px 0 $gray-accent;
+            .rainbow {
+                height: .25em;
+                width: 100%;
+                background-color: red;
+                position: absolute;
+                bottom: 0;
+                .colors {
+                    height: 100%;
+                    width: 5%;
+                    @include linear;
+                }
+                .primary {
+                    background-color: $primary;
+                }
+                .secondary {
+                    background-color: $secondary;
+                }
+                .accent1 {
+                    background-color: $accent1;
+                }
+                .accent2 {
+                    background-color: $accent2;
+                }
             }
-        }
-        ul {
-            padding: 0;
-            li {
-                list-style-type: none;
-                border-bottom: 1px solid $gray-accent;
+            i {
+                font-size: 1.25em;
                 color: $primary;
-                margin-left: 1em;
-                margin-bottom: 1em;
-                margin-right: 1em;
-                font-size: 1.5em;
+                @include linear;
+                @include v-center(absolute);
+                left: -2em;
+            }
+            .word-mark {
+                font-weight: bold;
+                font-size: 2em;
+                color: $primary;
+                @include linear;
+                margin: 0;
+                left: 1.75em;
+                @include v-center(absolute);
+            }
+            .account {
+                color: $accent2;
+                @include v-center;
+                @include linear(right);
+                background-color: transparent;
+                margin-right: .5em;
+                padding: .5em 1em;
+                width: 7em;
+                text-align: center;
+                border-radius: 3px;
+                text-transform: uppercase;
+                font-size: 1.1em;
+            }
+            .new {
+                @extend .account;
+                color: $primary;
+            }
+            .all {
+                @extend .account;
+                color: $accent1;
             }
         }
-        .copyright {
-            position: relative;
-            img {
-                @include h-center;
-                height: 3em;
-                width: auto;
+        .mobile-menu {
+            height: 100%;
+            width: 20em;
+            position: fixed;
+            top: 4em;
+            left: -20em;
+            z-index: 998;
+            background-color: white;
+            box-shadow: 1px 0 5px darken($gray-accent, 15%);
+            transition: left 500ms ease-in-out;
+            .logo {
+                position: relative;
+                height: 6em;
+                width: 100%;
+                img {
+                    @include centerer;
+                    height: 5em;
+                    width: auto;
+                    margin-bottom: 1em;
+                }
+            }
+            ul {
+                padding: 0;
+                li {
+                    list-style-type: none;
+                    border-bottom: 1px solid $gray-accent;
+                    color: $primary;
+                    margin-left: 1em;
+                    margin-bottom: 1em;
+                    margin-right: 1em;
+                    font-size: 1.5em;
+                }
+            }
+            .copyright {
+                position: relative;
+                img {
+                    @include h-center;
+                    height: 3em;
+                    width: auto;
+                }
+            }
+        }
+        .open {
+            @extend .mobile-menu;
+            left: 0 !important;
+        }
+    }
+
+    .container {
+        position: relative;
+        @include h-center;
+        width: 85%;
+        max-width: 1200px;
+        padding-top: 5em;
+    }
+
+    .footer {
+        margin-top: 3em;
+        position: relative;
+        height: 5em;
+        width: 100%;
+        text-align: center;
+        float: left;
+        i {
+            font-size: 1em;
+            color: $accent2;
+        }
+        span {
+            font-size: 1em;
+            color: lighten($primary, 35%);
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .home-page {
+            .about {
+                p {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+            .card {
+                width: 100%;
+            }
+            .search {
+                width: 80%;
+            }
+        }
+        .navigation {
+            .nav {
+                .word-mark {
+                    @include centerer(absolute);
+                }
+                .account {
+                    position: absolute;
+                    right: -200px;
+                }
+                .new {
+                    position: absolute;
+                    right: -200px;
+                }
+                .all {
+                    position: absolute;
+                    right: -200px;
+                }
+                i {
+                    left: 1em;
+                }
             }
         }
     }
-    .open {
-        @extend .mobile-menu;
-        left: 0 !important;
-    }
-}
 
-.container {
-    position: relative;
-    @include h-center;
-    width: 85%;
-    max-width: 1200px;
-    padding-top: 5em;
-}
+    @media screen and (max-width: 768px) {
+        .card {
+            width: 100%;
+        }
+        .account-page {
+            h3 {
+                font-size: 1.25em;
+                margin-top: 1em;
+            }
+            .email {
+                width: 98%;
+            }
+        }
+    }
 
-.footer {
-    position: relative;
-    height: 5em;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    float: left;
-    i {
-        font-size: 1.25em;
-        color: $secondary;
-    }
-    span {
-        font-size: 1.25em;
-        color: lighten($primary, 35%);
-        margin: 0;
-    }
-}
+    @media screen and (max-width: 1200px) {}

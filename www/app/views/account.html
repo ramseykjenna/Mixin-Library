@@ -1,6 +1,9 @@
 
-<div>
-<div>
+<div class="account-page">
+
+<!-- Profile Section -->
+<!--
+ <div class="profile">
   <h3>Profile</h3>
 
   <form role="form">
@@ -9,10 +12,7 @@
       <br />{{user.uid}}
     </p>
 
-    <p class="form-group">
-      <label>Name:</label>
-      <input type="text" name="name" ng-model="profile.name" />
-    </p>
+
 
     <p class="form-group">
       <label>Email:</label>
@@ -20,14 +20,37 @@
     </p>
   </form>
 
-  <p>
-    <button role="button" ng-click="logout()">Log Out</button>
+
+</div>
+-->
+
+<!-- Edit Email Section -->
+<div class="email">
+<form>
+
+  <h3>Update Profile</h3>
+<p class="form-group">
+      <label>Name:</label>
+      <input type="text" name="name" ng-model="profile.name" />
+    </p>
+  <p class="form-group">
+    <label>New Email</label>
+    <input type="text" ng-keypress="clear()" ng-model="newEmail" />
   </p>
+
+  <p class="form-group">
+    <label> Enter Password</label>
+    <input type="password" ng-keypress="clear()" ng-model="pass" />
+  </p>
+
+  <button ng-click="changeEmail(pass, newEmail)">Update Profile</button>
+</form>
 </div>
 
-<div>
+<!-- Edit Password Section -->
+<div class="pass">
 <form role="form">
-  <h3>Change Password</h3>
+  <h3>Update Password</h3>
 
   <p class="form-group">
     <label>Old Password:</label>
@@ -44,31 +67,16 @@
     <input type="password" ng-keypress="clear()" ng-model="confirm" />
   </p>
 
-  <button ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
+  <button ng-click="changePassword(oldpass, newpass, confirm)">Update Password</button>
 
   <p class="error" ng-show="err">{{err}}</p>
   <p class="good" ng-show="msg">{{msg}}</p>
 </form>
 </div>
 
-<div>
-<form>
-  <h3>Change Email</h3>
-
-  <p class="form-group">
-    <label>New Email:</label>
-    <input type="text" ng-keypress="clear()" ng-model="newEmail" />
+<p>
+    <button role="button" ng-click="logout()" id="logout">Log Out</button>
   </p>
-
-  <p class="form-group">
-    <label>Password:</label>
-    <input type="password" ng-keypress="clear()" ng-model="pass" />
-  </p>
-
-  <button ng-click="changeEmail(pass, newEmail)">update email</button>
-</form>
-</div>
-
 </div>
 
 <div ng-repeat="message in messages" class="alert alert-{{message.type}}">{{message.text}}</div>
