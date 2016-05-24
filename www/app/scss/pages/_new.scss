@@ -1,17 +1,64 @@
     .new-page {
         .about {
-            width: 60%;
+            width: 50%;
             @include h-center;
             margin-bottom: 2em;
-            margin-top: 5em;
+            margin-top: 3em;
             h1 {
                 color: $primary;
+                font-size: 1.5em;
                 white-space: nowrap;
+                text-align: center;
+                margin-bottom: .25em;
             }
             p {
+                margin: 0;
+                margin-bottom: 2em;
                 color: $accent2;
                 font-size: 1.25em;
                 text-align: center;
+            }
+            label {
+                color: $primary;
+                display: block;
+                width: 100%;
+            }
+            input {
+                margin: 1em 0;
+                width: 50%;
+                height: 2.5em;
+                border: 2px solid $gray-accent;
+                border-radius: 2px;
+                outline: none;
+            }
+            input:focus {
+                border: 2px solid darken($gray-accent, 15%);
+            }
+            .wrapper {
+                display: block;
+                margin: 1em 0;
+                height: 10em;
+                width: 100%;
+                position: relative;
+                i {
+                    @include centerer(absolute);
+                    color: $gray-accent;
+                    font-size: 5em;
+                }
+                .text {
+                    width: 100%;
+                    height: 100%;
+                    outline: 0;
+                    resize: none;
+                    padding: .75em;
+                    color: $primary;
+                    font-size: .9em;
+                    border: 2px solid $gray-accent;
+                border-radius: 2px;
+                }
+                .text:focus {
+                    border: 2px solid darken($gray-accent, 15%);
+                }
             }
             ul {
                 list-style-type: none;
@@ -36,14 +83,6 @@
                     }
                     a:hover {
                         color: $accent2;
-                    }
-                    .codepen-text {
-                        display: block;
-                        margin-left: 4em;
-                        height: 10em;
-                        width: 70%;
-                        border: 2px solid $gray-accent;
-                        border-radius: 2px;
                     }
                 }
             }

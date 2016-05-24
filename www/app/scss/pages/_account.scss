@@ -1,6 +1,6 @@
     .account-page {
         height: auto;
-        width: 70%;
+        width: 80%;
         padding-top: 5em;
         @include h-center;
         #logout {
@@ -8,7 +8,7 @@
             font-size: 1.5em;
             width: 100%;
             margin: 3em 0;
-            color:darken($gray-accent, 20%);
+            color: darken($gray-accent, 20%);
             text-align: center;
         }
         #logout:hover {
@@ -16,16 +16,12 @@
         }
         .email {
             @include linear;
-            width: 45%;
-            margin: 2.5%;
-//            text-align: center;
+            width: 40%;
+            margin: 5%;
         }
         .pass {
             @extend .email;
         }
-//        .email {
-//            @extend .profile;
-//        }
         h3 {
             color: darken($gray-accent, 20%);
             text-align: center;
@@ -33,7 +29,7 @@
             font-size: 1.5em;
         }
         label {
-        display: block;
+            display: block;
             color: $primary;
             margin-bottom: .5em;
         }
@@ -44,7 +40,6 @@
             border-radius: 2px;
             outline: 0;
             border: 2px solid darken($gray-accent, 10%);
-
         }
         button {
             width: 100%;
@@ -53,6 +48,6 @@
             height: 3em;
             background-color: $accent1;
             color: white;
-            font-size: .75em;
+            font-size: .8em;
         }
     }

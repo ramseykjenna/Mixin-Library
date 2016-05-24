@@ -5,43 +5,34 @@
         <p>The mixin library that’s super easy to use!! Here, users can find just the right mixin for projects, and upload mixins they feel would be useful for others!</p>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search Mixins">
+        <input type="text" placeholder="Search Mixins" ng-model="filter">
         <i class="ion-ios-search-strong"></i>
     </div>
     <div class="latest">
         <h1>Latest</h1>
-        <div class="card">
+        <div class="card" ng-repeat="mixin in mixinsArray | filter: {title: filter }">
             <div class="detail">
-                <span class="title">Centerer Mixin</span>
-                <span class="user">by Jenna Ramsey</span>
+                <span class="title">{{mixin.title}}</span>
+                <span class="user">by {{mixin.submittedBy}}</span>
                 <div class="icons">
-                    <i class="ion-ios-plus-outline"></i>
-                    <i class="ion-clipboard"></i>
+                    <i class="save" ng-class="{'ion-ios-plus-outline':!mixin.saved, 'ion-ios-checkmark':mixin.saved}" ng-click="save(mixin)"></i>
+                    <i class="copy" ng-class="{'ion-ios-copy-outline':!mixin.copied, 'ion-ios-copy':mixin.copied}" ng-click="mixin.copied = !mixin.copied"></i>
                 </div>
             </div>
-            <iframe height='372' class="codepen" scrolling='no' src='//codepen.io/ramseykjenna/embed/Myxyjy/?height=372&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='http://codepen.io/ramseykjenna/pen/Myxyjy/'>Centerer Mixin</a> by Jenna Ramsey (<a href='http://codepen.io/ramseykjenna'>@ramseykjenna</a>) on <a href='http://codepen.io'>CodePen</a>.
-            </iframe>
+            <div ng-bind-html="trust(mixin.codePen)"></div>
             <div class="comments">
-                <input type="text" placeholder="Add Comment..">
-                <button>Comment</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span class="title">Centerer Mixin</span>
-                <span class="user">by Jenna Ramsey</span>
-                <div class="icons">
-                    <i class="ion-ios-plus-outline"></i>
-                    <i class="ion-clipboard"></i>
+                <div ng-repeat="comment in mixin.comments" ng-class="{'first':$first,'last':$last}">
+                    <p><span>{{comment.user}}:</span>{{comment.text}}</p>
                 </div>
-            </div>
-            <iframe height='372' class="codepen" scrolling='no' src='//codepen.io/ramseykjenna/embed/Myxyjy/?height=372&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='http://codepen.io/ramseykjenna/pen/Myxyjy/'>Centerer Mixin</a> by Jenna Ramsey (<a href='http://codepen.io/ramseykjenna'>@ramseykjenna</a>) on <a href='http://codepen.io'>CodePen</a>.
-            </iframe>
-            <div class="comments">
-                <input type="text" placeholder="Add Comment..">
-                <button>Comment</button>
+                <form>
+                    <input type="text" placeholder="Add Comment.." ng-model="mixin.comment.text">
+                    <button ng-click="submitComment(mixin, 'Jenna')">Comment</button>
+                </form>
             </div>
         </div>
+
+        <!--
+
         <div class="card">
             <div class="detail">
                 <span class="title">Centerer Mixin</span>
@@ -139,42 +130,34 @@
             </div>
         </div>
 
+-->
 
     </div>
+<!--
     <div class="popular">
         <h1>Popular</h1>
-        <div class="card">
+        <div class="card" ng-repeat="mixin in mixinsArray">
             <div class="detail">
-                <span class="title">Centerer Mixin</span>
-                <span class="user">by Jenna Ramsey</span>
+                <span class="title">{{mixin.title}}</span>
+                <span class="user">by {{mixin.submittedBy}}</span>
                 <div class="icons">
-                    <i class="ion-ios-plus-outline"></i>
-                    <i class="ion-clipboard"></i>
+                    <i class="save" ng-class="{'ion-ios-plus-outline':!mixin.saved, 'ion-ios-checkmark':mixin.saved}" ng-click="mixin.saved = !mixin.saved"></i>
+                    <i class="copy" ng-class="{'ion-ios-copy-outline':!mixin.copied, 'ion-ios-copy':mixin.copied}" ng-click="mixin.copied = !mixin.copied"></i>
                 </div>
             </div>
-            <iframe height='372' class="codepen" scrolling='no' src='//codepen.io/ramseykjenna/embed/Myxyjy/?height=372&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='http://codepen.io/ramseykjenna/pen/Myxyjy/'>Centerer Mixin</a> by Jenna Ramsey (<a href='http://codepen.io/ramseykjenna'>@ramseykjenna</a>) on <a href='http://codepen.io'>CodePen</a>.
-            </iframe>
+            <div ng-bind-html="mixin.codePen"></div>
+
             <div class="comments">
-                <input type="text" placeholder="Add Comment..">
-                <button>Comment</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span class="title">Centerer Mixin</span>
-                <span class="user">by Jenna Ramsey</span>
-                <div class="icons">
-                    <i class="ion-ios-plus-outline"></i>
-                    <i class="ion-clipboard"></i>
+                <div ng-repeat="comment in mixin.comments" ng-class="{'first':$first,'last':$last}">
+                    <p><span>{{comment.user}}:</span>{{comment.text}}</p>
                 </div>
-            </div>
-            <iframe height='372' class="codepen" scrolling='no' src='//codepen.io/ramseykjenna/embed/Myxyjy/?height=372&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='http://codepen.io/ramseykjenna/pen/Myxyjy/'>Centerer Mixin</a> by Jenna Ramsey (<a href='http://codepen.io/ramseykjenna'>@ramseykjenna</a>) on <a href='http://codepen.io'>CodePen</a>.
-            </iframe>
-            <div class="comments">
-                <input type="text" placeholder="Add Comment..">
-                <button>Comment</button>
+                <form>
+                    <input type="text" placeholder="Add Comment.." ng-model="mixin.comment.text">
+                    <button ng-click="submitComment(mixin, 'Jenna')">Comment</button>
+                </form>
             </div>
         </div>
     </div>
+-->
 
 </div>

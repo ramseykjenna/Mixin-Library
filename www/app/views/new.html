@@ -2,7 +2,34 @@
 
     <div class="about">
         <h1>Do you have a mixin that could be useful to others?</h1>
-        <p>If so, follow these steps!</p>
+        <p>If so, fill out the form below!</p>
+
+        <!-- Mixin Name -->
+                <label for="">Name Your Mixin:</label>
+                <input type="text" ng-model="newMixin.title">
+
+                <!-- Mixin -->
+                <label for="">Paste Mixin Code Here:</label>
+                <div class="wrapper">
+                   <i class="ion-at" ng-if="!newMixin.mixin.length"></i>
+                    <textarea class="text" ng-model="newMixin.mixin"></textarea>
+                </div>
+
+                <!-- Codepen -->
+                <label for="">Paste CodePen iframe Here:</label>
+                <div class="wrapper">
+                   <i class="ion-social-codepen-outline" ng-if="!newMixin.codePen.length"></i>
+                    <textarea class="text" ng-model="newMixin.codePen"></textarea>
+                </div>
+
+                <!-- Description -->
+                <label for="">Enter Description Here:</label>
+                <div class="wrapper">
+                   <i class="ion-compose" ng-if="!newMixin.comments[0].text.length"></i>
+                    <textarea class="text" ng-model="newMixin.comments[0].text"></textarea>
+                </div>
+
+<!--
         <ul>
             <li><span>1. </span> First, create a <a href="https://codepen.io/">codepen</a> that showcases your mixin
 
@@ -14,17 +41,20 @@
                 </div>
             </li>
             <li><span>3. </span> Copy and paste the code provided into the form below
-                <textarea class="codepen-text"  placeholder="Paste Codepen here.."></textarea>
+
+
+
             </li>
             <li><span>4. </span> Hit submit, and behold your fabulous mixin!
             </li>
         </ul>
+-->
 
     </div>
     <div class="upload">
 
 
-        <button>Submit</button>
+        <button ng-click="saveMixin()">Submit</button>
     </div>
 
 

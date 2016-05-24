@@ -52,12 +52,12 @@
                 @include linear;
                 float: right;
                 text-align: right;
-                .ion-ios-plus-outline {
+                .save {
                     font-size: 1.5em;
                     color: $accent1;
                     margin-right: .5em;
                 }
-                .ion-clipboard {
+                .copy {
                     font-size: 1.5em;
                     color: $secondary;
                 }
@@ -68,8 +68,19 @@
         }
         .comments {
             width: 100%;
-            padding: 1em;
-            padding-bottom: 0;
+            padding: 0 1em;
+            p {
+                width: 100%;
+                margin: .2em 0;
+                font-size: .9em;
+                span {
+                    font-size: .9em;
+                    color: darken($gray-accent, 25%);
+                    margin-right: .25em;
+                }
+                @include linear;
+                color: $primary;
+            }
             input {
                 height: 2em;
                 border-style: none;
@@ -77,10 +88,11 @@
                 outline: 0;
                 border: 2px solid $gray-accent;
                 @include linear;
-                width: 76%;
+                width: 78%;
                 padding-left: .25em;
-                margin-right: 4%;
-                font-size: 1em;
+                margin-right: 2%;
+                font-size: .75em;
+                height: 33px;
                 color: $primary;
             }
             button {
@@ -90,6 +102,17 @@
                 height: 3em;
                 color: white;
                 background-color: $accent2;
+                outline: none;
+            }
+            .first {
+                p {
+                     margin-top: .75em;
+                }
+            }
+            .last {
+                p {
+                   margin-bottom: .75em;
+                }
             }
         }
     }
@@ -140,7 +163,7 @@
                 color: $primary;
                 @include linear;
                 margin: 0;
-                left: 1.75em;
+                left: 1em;
                 @include v-center(absolute);
             }
             .account {
@@ -181,7 +204,7 @@
                 width: 100%;
                 img {
                     @include centerer;
-                    height: 5em;
+                    height: 2em;
                     width: auto;
                     margin-bottom: 1em;
                 }
@@ -255,7 +278,11 @@
                 width: 80%;
             }
         }
-        .navigation {
+
+    }
+
+    @media screen and (max-width: 768px) {
+       .navigation {
             .nav {
                 .word-mark {
                     @include centerer(absolute);
@@ -277,12 +304,6 @@
                 }
             }
         }
-    }
-
-    @media screen and (max-width: 768px) {
-        .card {
-            width: 100%;
-        }
         .account-page {
             h3 {
                 font-size: 1.25em;
@@ -293,5 +314,11 @@
             }
         }
     }
+
+@media screen and (max-width: 1000px) {
+     .card {
+            width: 100%;
+        }
+}
 
     @media screen and (max-width: 1200px) {}
